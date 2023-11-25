@@ -4,14 +4,14 @@ public class Task1 {
 
 	public static void main(String[] args) {
 		
-		Integer a = 10;
+		int a = 10;
 		
-		Integer b = 20;
+		int b = 20;
 		
 		System.out.println("a = " + a);
 		System.out.println("b = " + b);
 		
-		Integer c = a;
+		int c = a;
 		
 		a = b;
 		
@@ -19,7 +19,7 @@ public class Task1 {
 		
 		System.out.println("a = " + a);
 		System.out.println("b = " + b);
-		System.out.println(Integer.compare(2, 0));
+
 	}
 
 }
