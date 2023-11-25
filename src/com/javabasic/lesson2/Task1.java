@@ -19,6 +19,7 @@ public class Task1 {
 		
 		System.out.println("a = " + a);
 		System.out.println("b = " + b);
+		System.out.println(Integer.compare(2, 0));
 	}
 
 }
