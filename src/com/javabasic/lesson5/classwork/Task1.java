@@ -2,11 +2,11 @@ package com.javabasic.lesson5.classwork;
 
 public class Task1 {
     public static void main(String[] args) {
-        double lenght = 1.5;
+        double length = 1.5;
         double width = 0.5;
         double height = 1;
 
-        double volume  = calculateVolume(lenght, width, height);
+        double volume  = calculateVolume(length, width, height);
         System.out.println(volume);
 
         double totalWeight = calculateTotalWeight(volume);
