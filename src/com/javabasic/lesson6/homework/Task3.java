@@ -16,7 +16,7 @@ public class Task3 {
 
         int bigJar = apple / appleBigJar;
         int middleJar = apple % appleBigJar / appleMiddleJar;
-        int smallJar = apple % appleMiddleJar;
+        int smallJar = apple % appleBigJar % appleMiddleJar;
 
         System.out.println("Количество больших банок: " + bigJar);
         System.out.println("Количество средних банок: " + middleJar);

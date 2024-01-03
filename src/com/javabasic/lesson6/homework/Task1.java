@@ -13,12 +13,9 @@ public class Task1 {
     }
 
     public static void printMinNumber (int number1, int number2, int number3) {
-        if (number1 < number2 && number1 < number3) {
-            System.out.println("min: " + number1);
-        } else if (number2 < number1 && number2 < number3) {
-            System.out.println("min: " + number2);
-        }else {
-            System.out.println("min: " + number3);
-        }
+        int num1 = Math.min(number1, number2);
+        int result = Math.min(num1, number3);
+        System.out.println("min: " + result);
+
     }
 }

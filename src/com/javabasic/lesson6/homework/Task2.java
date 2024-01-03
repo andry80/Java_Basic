@@ -13,17 +13,13 @@ public class Task2 {
         System.out.println(getResult(numberOne, action, numberTwo));
     }
 
-    public static double getResult(double numberOne, String  action, double numberTwo) {
-        double result = switch (action) {
+    public static Double getResult(double numberOne, String  action, double numberTwo) {
+        return switch (action) {
             case "+" -> numberOne+numberTwo;
             case "-" -> numberOne-numberTwo;
-            case "/" -> numberOne/numberTwo;
+            case "/" -> (numberTwo!=0 ? numberOne/numberTwo : null);
             case "*" -> numberOne*numberTwo;
-            default -> numberOne+numberTwo;
+            default -> null;
         };
-        return result;
-
-
-
     }
 }
