@@ -1,6 +1,5 @@
 package com.javabasic.lesson9.homework;
 
-
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -31,16 +30,12 @@ public class Task1 {
             if (num <= 9 && num >=0) {
                 list[i] = num;
                 i++;
-            }else {
-                continue;
             }
-
         }
     }
 
      public static void random(int[] list) {
          for (int i = 0; i < list.length; i++) {
-//             list[i] = (int) (Math.random() * (10  - 0) + 0);
              list[i] = (int) (Math.random() * 10);
          }
      }

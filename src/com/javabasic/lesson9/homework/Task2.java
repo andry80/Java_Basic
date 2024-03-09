@@ -9,7 +9,6 @@ public class Task2 {
         System.out.println(Arrays.toString(list));
 
         mySort(list);
-
     }
 
     public static void random(int[] list) {
