@@ -18,7 +18,7 @@ public class Cat {
         this.name = name;
         this.age = age;
         this.weight = 1;
-        this.breed = "without breed";
+        this.breed = null;
     }
 
     public Cat() {
