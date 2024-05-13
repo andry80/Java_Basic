@@ -7,14 +7,14 @@ public class СoffeeMachine {
 
     private ArrayList<Drink> drink = new ArrayList<>();
     private Scanner scanner = new Scanner(System.in);
-    private FabricClass fabricclass;
+    private DrinkFabric drinkfabric;
 
-    public СoffeeMachine(FabricClass fabricclass) {
-        this.fabricclass = fabricclass;
+    public СoffeeMachine(DrinkFabric fabricclass) {
+        this.drinkfabric = fabricclass;
     }
 
     public void setList() {
-        fabricclass.printMenu();
+        drinkfabric.printMenu();
 
         while (true) {
             System.out.print("Enter number: ");
@@ -25,7 +25,7 @@ public class СoffeeMachine {
 
             System.out.print("    enter quantity: ");
             int count = scanner.nextInt();
-            drink.add(this.fabricclass.menu(num, count));
+            drink.add(this.drinkfabric.menu(num, count));
         }
     }
 
@@ -36,7 +36,7 @@ public class СoffeeMachine {
         double num = 0;
         for (Drink i : drink) {
             System.out.println(i);
-            num += i.getCost();
+            num += i.calcCost();
         }
         System.out.println("Order cost: " + num);
         System.out.println();

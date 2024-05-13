@@ -7,7 +7,7 @@ public class Americano extends Drink {
     public Americano(int count) {
         this.count = count;
     }
-    public double getCost() {
+    public double calcCost() {
         return this.cost * this.count;
     }
 
@@ -16,6 +16,6 @@ public class Americano extends Drink {
     }
 
     public String toString() {
-        return "[" + this.count + " Americano: "+ this.getCost() + "]";
+        return "[" + this.count + " Americano: "+ this.calcCost() + "]";
     }
 }

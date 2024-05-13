@@ -4,5 +4,5 @@ public enum Drinks {
     TEA,
     AMERICANO,
     LATTE,
-    CAPPUCCINO;
+    CAPPUCCINO
 }

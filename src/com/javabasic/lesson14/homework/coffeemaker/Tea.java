@@ -8,7 +8,7 @@ public class Tea extends Drink{
         this.count = count;
     }
 
-    public double getCost() {
+    public double calcCost() {
         return this.cost * this.count;
     }
 
@@ -17,7 +17,7 @@ public class Tea extends Drink{
     }
 
     public String toString() {
-        return "[" + this.count + " Tea: "+ this.getCost() + "]";
+        return "[" + this.count + " Tea: "+ this.calcCost() + "]";
     }
 
 }

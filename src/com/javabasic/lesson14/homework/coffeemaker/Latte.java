@@ -8,7 +8,7 @@ public class Latte extends Drink {
         this.count = count;
     }
 
-    public double getCost() {
+    public double calcCost() {
         return this.cost * this.count;
     }
 
@@ -17,6 +17,6 @@ public class Latte extends Drink {
     }
 
     public String toString() {
-        return "[" + this.count + " Latte: "+ this.getCost() + "]";
+        return "[" + this.count + " Latte: "+ this.calcCost() + "]";
     }
 }

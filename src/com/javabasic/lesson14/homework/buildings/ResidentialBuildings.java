@@ -3,11 +3,12 @@ package com.javabasic.lesson14.homework.buildings;
 public class ResidentialBuildings extends IndustrialBuildings {
     private double subsidies;
 
-    public ResidentialBuildings(double subsidies) {
+    public ResidentialBuildings(int area, int tax, double subsidies) {
+        super(area, tax);
         this.subsidies = subsidies;
     }
 
-    public int calcCost(int area, int tax) {
-        return super.calcCost(area, tax) - (int) (super.calcCost(area, tax)*(subsidies/100));
+    public int calcCost() {
+        return super.calcCost() - (int) (super.calcCost() * (subsidies/100));
     }
 }

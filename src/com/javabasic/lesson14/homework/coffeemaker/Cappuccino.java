@@ -8,7 +8,7 @@ public class Cappuccino extends Drink {
         this.count = count;
     }
 
-    public double getCost() {
+    public double calcCost() {
         return this.cost * this.count;
     }
 
@@ -17,6 +17,6 @@ public class Cappuccino extends Drink {
     }
 
     public String toString() {
-        return "[" + this.count + " Cappuccino: "+ this.getCost() + "]";
+        return "[" + this.count + " Cappuccino: "+ this.calcCost() + "]";
     }
 }

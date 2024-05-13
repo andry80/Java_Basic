@@ -1,6 +1,6 @@
 package com.javabasic.lesson14.homework.coffeemaker;
 
-public class FabricClass  {
+public class DrinkFabric {
 
     public void printMenu() {
         System.out.println("1 - Tea");
