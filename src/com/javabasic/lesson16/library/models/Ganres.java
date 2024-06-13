@@ -1,6 +1,7 @@
 package com.javabasic.lesson16.library.models;
 
 import com.javabasic.lesson16.library.base.Catalog;
+import com.javabasic.lesson16.library.base.PrintBase;
 
 import java.sql.*;
 
@@ -55,13 +56,6 @@ public class Ganres implements Catalog {
         ResultSet rs = stmt.executeQuery("SELECT * FROM GANRES");
         ResultSetMetaData metadata = rs.getMetaData();
 
-        while (rs.next()){
-            System.out.print("|");
-            for (int i = 1; i<=metadata.getColumnCount(); i++) {
-                String namecolomn = metadata.getColumnName(i);
-                System.out.print(rs.getString(namecolomn) + "|");
-            }
-            System.out.println();
-        }
+        PrintBase.PrintResult(rs, metadata);
     }
 }

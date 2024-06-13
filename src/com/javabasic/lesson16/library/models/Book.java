@@ -1,6 +1,7 @@
 package com.javabasic.lesson16.library.models;
 
 import com.javabasic.lesson16.library.base.Catalog;
+import com.javabasic.lesson16.library.base.PrintBase;
 import com.javabasic.lesson16.library.base.ViewBy;
 
 import java.sql.*;
@@ -80,44 +81,23 @@ public class Book implements Catalog, ViewBy {
     }
 
     public void view() throws Exception {
-        ResultSet rs = stmt.executeQuery("SELECT * FROM BOOKS");
+    ResultSet rs = stmt.executeQuery("SELECT b.ID, b.NAME_BOOK, a.NAME_AUTOR FROM BOOKS AS b, AUTORS AS a WHERE a.ID=b.ID_AUTOR");
         ResultSetMetaData metadata = rs.getMetaData();
 
-        while (rs.next()){
-            System.out.print("|");
-            for (int i = 1; i<=metadata.getColumnCount(); i++) {
-                String namecolomn = metadata.getColumnName(i);
-                System.out.print(rs.getString(namecolomn) + "|");
-            }
-            System.out.println();
-        }
+        PrintBase.PrintResult(rs, metadata);
     }
 
     public void viewByAutor(int idAutor) throws Exception {
-        ResultSet rs = stmt.executeQuery("SELECT * FROM BOOKS WHERE ID_AUTOR=" + idAutor);
+        ResultSet rs = stmt.executeQuery("SELECT BOOKS.ID, BOOKS.NAME_BOOK, BOOKS.DESCRIPTION, BOOKS.BOOK_YEAR, GANRES.NAME_GANRE  FROM BOOKS, GANRES  WHERE GANRES.ID=BOOKS.ID_GANRE and ID_AUTOR=" + idAutor);
         ResultSetMetaData metadata = rs.getMetaData();
 
-        while (rs.next()){
-            System.out.print("|");
-            for (int i = 1; i<=metadata.getColumnCount(); i++) {
-                String namecolomn = metadata.getColumnName(i);
-                System.out.print(rs.getString(namecolomn) + "|");
-            }
-            System.out.println();
-        }
+        PrintBase.PrintResult(rs, metadata);
     }
 
     public void viewByGanre(int idGanre) throws Exception {
-        ResultSet rs = stmt.executeQuery("SELECT * FROM BOOKS WHERE ID_GANRE=" + idGanre);
+        ResultSet rs = stmt.executeQuery("SELECT BOOKS.ID, BOOKS.NAME_BOOK, BOOKS.DESCRIPTION, BOOKS.BOOK_YEAR, AUTORS.NAME_AUTOR  FROM BOOKS, AUTORS  WHERE AUTORS.ID=BOOKS.ID_AUTOR and ID_GANRE=" + idGanre);
         ResultSetMetaData metadata = rs.getMetaData();
 
-        while (rs.next()){
-            System.out.print("|");
-            for (int i = 1; i<=metadata.getColumnCount(); i++) {
-                String namecolomn = metadata.getColumnName(i);
-                System.out.print(rs.getString(namecolomn) + "|");
-            }
-            System.out.println();
-        }
+        PrintBase.PrintResult(rs, metadata);
     }
 }

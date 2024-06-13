@@ -23,7 +23,6 @@ public class Library {
 
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
-
             stmt = conn.createStatement();
 
             Autor autor = new Autor(stmt);
