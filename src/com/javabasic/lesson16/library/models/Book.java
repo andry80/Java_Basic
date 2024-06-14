@@ -81,7 +81,7 @@ public class Book implements Catalog, ViewBy {
     }
 
     public void view() throws Exception {
-    ResultSet rs = stmt.executeQuery("SELECT b.ID, b.NAME_BOOK, a.NAME_AUTOR FROM BOOKS AS b, AUTORS AS a WHERE a.ID=b.ID_AUTOR");
+    ResultSet rs = stmt.executeQuery("SELECT b.ID, b.NAME_BOOK, a.NAME_AUTOR, a.SURNAME FROM BOOKS AS b, AUTORS AS a WHERE a.ID=b.ID_AUTOR");
         ResultSetMetaData metadata = rs.getMetaData();
 
         PrintBase.PrintResult(rs, metadata);
